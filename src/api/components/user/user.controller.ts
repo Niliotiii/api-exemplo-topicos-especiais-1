@@ -1,6 +1,7 @@
 // Arquivo: user.controller.ts
 
-import { Request, Response } from 'express';
+import { Request, Response, request } from 'express';
+import { App } from '../../../app';
 
 var users = [{id: 1, nome: 'Danilo', email: 'danilosaiter@hotmail.com', usuario: 'niliotiii', senha:'1234', situacao:true},
 {id: 2, nome: 'Caian', email: 'caianhenrique@gmail.com', usuario: 'caianzeira', senha:'4321', situacao:true}]
@@ -15,7 +16,10 @@ export class UserController {
   }
 
   // cria um usuario
-  public create(data:any, res: Response) {
+  public create(req:Request, res: Response) {
+
+    users.push(insert) 
+
     res.status(200).json({message: 'função insert'});
   }
 
